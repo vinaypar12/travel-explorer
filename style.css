@@ -578,3 +578,152 @@ footer {
     }
 }
 
+
+
+/* mobile css for responsiv */
+
+/* responsive enhancements */
+
+/* >= 1200px handled by base styles; refine for medium screens */
+@media (max-width: 1200px) {
+    .container { width: 90%; }
+    .destination-grid,
+    .packages-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .testimonial-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    nav ul { gap: 14px; }
+}
+
+/* tablets / small laptops */
+@media (max-width: 900px) {
+    header { padding: 14px 0; }
+    nav { gap: 12px; }
+    nav ul { gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .hero-content h2 { font-size: 2.2rem; line-height: 1.1; }
+    .hero-content p { font-size: 1.05rem; }
+    .bg-video { height: 80vh; }
+    .destination-grid,
+    .packages-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .testimonial-grid { grid-template-columns: 1fr; }
+    .destination-card img,
+    .packages-card img { height: 180px; }
+}
+
+/* typical mobile */
+@media (max-width: 768px) {
+    .container { width: 95%; padding: 0 12px; }
+    header { position: relative; padding: 12px 0; }
+    nav { flex-direction: column; gap: 8px; align-items: center; }
+    nav ul { flex-direction: column; gap: 10px; align-items: center; width: 100%; }
+    nav ul li { width: 100%; text-align: center; }
+    nav ul li a { display: inline-block; width: 100%; padding: 8px 0; font-size: 0.95rem; }
+    #home { height: auto; padding: 60px 0; }
+    .bg-video { position: relative; height: 60vh; max-height: 420px; }
+    .overlay { height: 60vh; max-height: 420px; }
+    .hero-content { padding: 0 16px; }
+    .hero-content h2 { font-size: 1.8rem; }
+    .destination-grid,
+    .packages-grid { grid-template-columns: 1fr; gap: 18px; }
+    .destination-card, .packages-card { flex-direction: column; }
+    .destination-card img, .packages-card img { height: 160px; border-radius: 10px 10px 0 0; }
+    form { padding: 24px; max-width: 100%; width: 100%; }
+    form input, form select, form textarea { padding: 10px 12px; font-size: 0.95rem; }
+    form button[type="submit"],
+    .packages-card button { width: 100%; margin: 10px 0 0 0; }
+}
+
+/* small phones */
+@media (max-width: 480px) {
+    header { padding: 10px 0; }
+    .container { padding: 0 10px; }
+    nav ul li a { font-size: 0.9rem; }
+    .hero-content h2 { font-size: 1.6rem; margin-bottom: 8px; }
+    .hero-content p { font-size: 0.95rem; }
+    .bg-video, .overlay { height: 50vh; max-height: 340px; }
+    .destination-card img, .packages-card img { height: 140px; }
+    .destination-card h3, .packages-card h3 { font-size: 1.05rem; }
+    .destination-card p, .packages-card p { font-size: 0.9rem; padding: 0 12px 18px; }
+    form { padding: 18px; }
+    form label { font-size: 0.9rem; }
+    form input, form select, form textarea { padding: 10px; font-size: 0.9rem; }
+    .social-links a { width: 36px; height: 36px; font-size: 1rem; }
+}
+
+/* utility tweaks for very narrow content & accessibility */
+@media (max-width: 360px) {
+    .hero-content { max-width: 92%; }
+    nav ul { gap: 6px; }
+    .footer-content { gap: 20px; }
+}
+
+/* prevent overflow on all small screens */
+html, body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    overflow-x: hidden;
+}
+
+/* Fix video/image display on mobile */
+#home {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    #home {
+        height: auto;
+        min-height: 50vh;
+        padding: 30px 0;
+        overflow-x: hidden;
+    }
+    section .container{
+        padding: 0px !important;
+    }
+    .bg-video {
+        position: relative !important;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        height: 50vh;
+        max-height: none;
+        object-fit: cover;
+    }
+    
+    .overlay {
+        position: relative !important;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        height: 50vh;
+    }
+    
+    .hero-content {
+        padding: 0 15px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    #home {
+        min-height: 45vh;
+        padding: 20px 0;
+    }
+    
+    .bg-video {
+        height: 45vh;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+    }
+    
+    .overlay {
+        height: 45vh;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+    }
+    
+    .hero-content {
+        padding: 0 12px;
+    }
+}
